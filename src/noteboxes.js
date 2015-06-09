@@ -1,7 +1,13 @@
+import { WebAPI } from './web-api';
+
 export class Noteboxes{
-  //Getters can't be observed with Object.observe, so they must be dirty checked.
-  //However, if you tell Aurelia the dependencies, it no longer needs to dirty check the property.
-  //To optimize by declaring the properties that this getter is computed from, uncomment the line below.
-  //@computedFrom('firstName', 'lastName')
-  
+	static inject = [WebAPI];
+	
+    constructor(api){
+		this.api = api;
+	}
+	
+	created(){
+      this.noteboxes = this.api.getNoteboxes();
+    }
 }
