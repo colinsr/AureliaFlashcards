@@ -4,7 +4,7 @@ import { WebAPI } from './web-api';
 
 export class App {
   configureRouter(config, router){
-    config.title = 'Aurelia';
+    config.title = 'Aurelia Flash Cards';
     config.map([
       { route: ['','notebox'],  moduleId: './notebox',      nav: true, title:'Notebox' }
     ]);
